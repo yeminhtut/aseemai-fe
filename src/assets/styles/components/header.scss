@@ -1,0 +1,39 @@
+.basic {
+    &__header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        height: 57px;
+        font-size: 18px;
+        line-height: 1.1;
+        color: $bg-color-white;
+        z-index: 4;
+        background-color: $bg-color-red;
+
+        &--search {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        &--overlay {
+            z-index: 2;
+        }
+    }
+}
+
+.merchant-users {
+    &__header {
+        &--search {
+            padding-left: 12px;
+            padding-right: 12px;
+            @media screen and (max-width: 568px) {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+    }
+}

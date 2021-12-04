@@ -1,0 +1,52 @@
+.reservations-search {
+    background-color: $bg-color-canvas;
+    box-sizing: border-box;
+    min-height: calc(100vh - 57px);
+    padding: 7px;
+
+    @media screen and (min-width: 768px) {
+        padding: 20px 16px;
+    }
+    &__item-container {
+        background-color: $bg-color-white;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+        box-sizing: border-box;
+        box-shadow: 0 2px 5px 1px rgba($shadow-light-color, 0.1);
+        padding-top: 20px;
+
+        &:not(:first-child) {
+            margin-top: 7px;
+        }
+    }
+    &__loading,
+    &__empty-results {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: calc(100vh - 57px - 14px);
+        justify-content: center;
+
+        &-desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 348px;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px 1px rgba(171, 167, 167, 0.1);
+            background-color: $bg-color-white;
+        }
+    }
+    &__empty-results {
+        flex-direction: column;
+
+        > img {
+            width: 80px;
+        }
+        &-text {
+            color: $light-text-color;
+            font-size: 14px;
+            margin-top: 16px;
+        }
+    }
+}

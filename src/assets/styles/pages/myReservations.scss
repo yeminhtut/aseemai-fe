@@ -1,0 +1,735 @@
+.reservations {
+    &__header {
+        position: relative;
+        .header-btn {
+            fill: $bg-color-white;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &__neighbour {
+                margin-left: 20px;
+            }
+            &.back-btn {
+                margin-right: 16px;
+            }
+        }
+    }
+    &__content {
+        padding: 12px 10px 0;
+        background-color: #f8f8f8;
+        max-width: 1024px;
+        margin: auto;
+        @media screen and (max-width: 678px) {
+            padding: 12px 8px 0;
+        }
+    }
+    &__restaurant-list {
+        box-shadow: 0 2px 4px 0 rgba($shadow-bg-color, 0.07);
+        position: relative;
+        padding: 15px 50px 15px 20px;
+        font-size: 16px;
+        line-height: 24px;
+        border: none;
+        border-radius: 2px;
+        background: $bg-color-white;
+        margin-bottom: 10px;
+        word-break: break-word;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            background: url('../../assets/img/icons/ic-arrow--down.svg') no-repeat center/contain;
+        }
+        &-label {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+    &__restaurant-title {
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 8px;
+        line-height: 20px;
+    }
+    &__restaurant-title__p {
+        margin: 0;
+        padding-bottom: 5px;
+        font-family: HelveticaNeue;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: $primary-text-color;
+        border-bottom: 1px solid $input-bg-color;
+    }
+    &__total-reservations {
+        background-color: $bg-color-white;
+        border: none;
+        border-radius: 4px;
+        margin: 8px 0;
+    }
+    &__total-loadmore {
+        background-color: $bg-color-red !important;
+        width: 100%;
+        padding: 15px !important;
+        color: $bg-color-white !important;
+        font-weight: 500 !important;
+    }
+    &__total-reservations-count-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 12px 15px 15px;
+    }
+    &__toral-reservations-count-block {
+        text-align: center;
+    }
+    &__total-reservations-count-block-num {
+        font-size: 70px;
+        line-height: 1.2;
+        text-align: center;
+        &.grey-text {
+            color: $light-text-color;
+        }
+        @media screen and (max-width: 678px) {
+            font-size: 24px;
+        }
+    }
+    &__total-reservations-count-block-caption {
+        padding: 4px 0 10px;
+        font-size: 14px;
+        line-height: 1.1;
+        color: $dark-border-color;
+        text-align: center;
+    }
+    &__list-wrapper {
+        background-color: $bg-color-white;
+        border-radius: 0px;
+        margin: 0px;
+
+        &:first-child {
+            border-radius: 4px 4px 0px 0px;
+        }
+
+        &:last-child {
+            border-radius: 0px 0px 4px 4px;
+        }
+    }
+    &__lists-wrapper {
+        margin-top: 30px;
+        position: relative;
+    }
+    &__list-status {
+        display: flex;
+        position: absolute;
+        top: -15px;
+        right: 64px;
+        &--item {
+            border-radius: 2px 2px 0 0;
+            margin: 0 1px;
+            width: 15px;
+            height: 15px;
+            &.attended {
+                background-color: $bg-color-yellow;
+                order: 1;
+            }
+            &.upcoming {
+                background-color: $bg-color-green;
+                order: 2;
+            }
+            &.no-show {
+                background-color: $light-text-color;
+                order: 3;
+            }
+            &.cancelled {
+                background-color: $bg-color-bright-red;
+                order: 4;
+            }
+        }
+    }
+    &__list-title {
+        padding: 20px 15px 17px;
+        margin: 0 50px 0 15px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $border-color;
+
+        @media screen and (max-width: 678px) {
+            padding: 20px 0px 17px;
+            margin: 0 15px 0 15px;
+        }
+    }
+    &__list {
+        margin-top: 20px;
+
+        &--loader {
+            margin: 0 auto;
+            &.content {
+                :nth-child(1) {
+                    position: absolute;
+                    width: 70px;
+                    margin: 0 auto;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                }
+            }
+            :nth-child(1) {
+                width: 70px;
+                margin: 0 auto;
+            }
+        }
+    }
+    &__list--item-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 678px) {
+            flex-direction: column-reverse;
+        }
+    }
+    &__list--item-info {
+        align-items: flex-start;
+        flex-direction: column;
+        display: flex;
+    }
+    // Styles for UserDetail page maybe can deleted after review markup
+    &__list-item-container {
+        display: inline-block;
+        width: 100%;
+    }
+    &__list-item-discount {
+        float: left;
+        vertical-align: middle;
+        width: 45px;
+        height: 45px;
+        margin-right: 20px;
+        font-size: 14px;
+        line-height: 45px;
+        color: $bg-color-white;
+        text-align: center;
+        background: transparent url('../img/icons/ic-discount.svg') center/45px no-repeat;
+    }
+    &__list-item-restaurant {
+        display: inline-block;
+        vertical-align: middle;
+        flex: 1;
+    }
+    &__list-item-restaurant-name {
+        word-wrap: break-word;
+        overflow: hidden;
+        margin-bottom: 5px;
+        padding-right: 10px;
+        font-size: 16px;
+        color: $primary-text-color;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    &__list-item-date,
+    &__list-item-persons {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+        line-height: 1.1;
+        color: $light-text-color;
+    }
+    &__list-item-date {
+        padding-left: 18px;
+        background: transparent url('../img/icons/ic_clock.svg') left center/13px no-repeat;
+    }
+    &__list-item-persons {
+        margin-left: 20px;
+        padding-left: 25px;
+        background: transparent url('../img/icons/ic_persons.svg') left center/18px no-repeat;
+    }
+    &__list-item-restaurant-detail {
+        padding: 12px 0 12px 0;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        font-family: HelveticaNeue;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.29;
+        letter-spacing: normal;
+        text-align: left;
+        color: $dark-border-color;
+        p {
+            margin: 0;
+        }
+        img {
+            padding: 2px 8px 0 0;
+        }
+    }
+    &__list-item-promocode {
+        float: right;
+        vertical-align: middle;
+        padding: 0 10px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: $bg-color-white;
+        border-radius: 2px;
+    }
+    // New styles for My Reservation page 30.03.18
+    &__list-failed {
+        text-align: center;
+        background: white;
+        padding: 60px 0px;
+
+        img {
+            width: 68px;
+            height: 75px;
+        }
+
+        &-text {
+            margin: 20px 0px 20px 0px;
+        }
+
+        &-try-again {
+            cursor: pointer;
+            color: $bg-color-red;
+        }
+    }
+    &__list-item {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 15px 15px;
+        border-bottom: 1px solid $border-color;
+        margin: 0 20px 20px 15px;
+
+        @media screen and (max-width: 678px) {
+            padding: 0 0 10px 15px;
+        }
+        &.red-text {
+            color: $bg-color-red;
+            justify-content: center;
+        }
+        &.loading {
+            color: $bg-color-red;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        &.empty {
+            color: #ff9d00;
+            font-size: 18px;
+            padding: 24px;
+            justify-content: center;
+        }
+        &--flex {
+            display: flex;
+            align-items: center;
+        }
+        &--mark {
+            margin-left: 20px;
+
+            &-svg {
+                fill: $primary-text-color !important;
+            }
+        }
+        &--failed {
+            margin: 0px;
+            padding: 0px;
+        }
+        &--head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin-bottom: 19px;
+        }
+        &--user-name {
+            background: $border-color;
+            min-width: 200px;
+            width: auto;
+            margin-right: 30px;
+            line-height: 1.3;
+            padding: 6px 10px 5px;
+            border-radius: 2px;
+            color: $primary-text-color;
+            font-weight: 500;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            @media screen and (max-width: 365px) {
+                min-width: 0;
+                flex: 1;
+            }
+        }
+        &--status {
+            box-sizing: border-box;
+            color: $bg-color-white;
+            font-size: 12px;
+            line-height: 1.3;
+            padding: 9px 22px 6px;
+            min-width: 127px;
+            width: auto;
+            max-height: 30px;
+            text-align: center;
+            border-radius: 2px;
+
+            &.attended {
+                background-color: $bg-color-yellow;
+            }
+            &.upcoming {
+                background-color: $bg-color-green;
+            }
+            &.no-show {
+                background-color: $light-text-color;
+            }
+            &.cancelled {
+                background-color: $bg-color-bright-red;
+            }
+
+            &-wrapper {
+                display: flex;
+                justify-content: space-between;
+
+                @media screen and (max-width: 678px) {
+                    margin-bottom: 16px;
+                    width: 100%;
+                }
+            }
+        }
+        &--text {
+            font-size: 14px;
+            line-height: 1.3;
+            color: $primary-text-color;
+            display: flex;
+            align-items: flex-start;
+            margin-right: 60px;
+            max-width: 780px;
+            img {
+                margin-right: 14px;
+                margin-top: 3px;
+            }
+        }
+        &--text-date {
+            color: $dark-border-color;
+            font-size: 12px;
+            margin-left: 4px;
+        }
+        &--info {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .reservations__list-item--text {
+                align-items: center;
+                margin-top: 10px;
+                img {
+                    margin-top: 0;
+                }
+            }
+            @media screen and (max-width: 678px) {
+                flex-direction: column;
+            }
+        }
+
+        &--reserve {
+            font-size: 14px;
+            color: #838383;
+        }
+
+        &--channel {
+            font-size: 14px;
+            color: #4a4a4a;
+            margin: 6px auto 12px;
+        }
+
+        &--reserved-time {
+            line-height: 1.3;
+            color: $dark-border-color;
+            align-items: flex-start;
+            display: flex;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+
+        &--gv {
+            margin-right: 15px;
+        }
+
+        &--condition.reservations__list-item--text {
+            font-size: 12px;
+            color: $bg-color-yellow;
+            align-items: flex-start;
+            word-break: break-word;
+            img {
+                min-width: 12px;
+                min-height: 12px;
+                width: 12px;
+                height: 12px;
+                margin-top: 1px;
+            }
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+    &__select-restaurants {
+        &-content {
+            padding-top: 20px;
+        }
+        &-wrapper {
+            background: #f8f8f8;
+        }
+        &-footer {
+            position: relative;
+            text-align: center;
+            border-top: 0.5px solid $border-color;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 1px;
+                background-color: $border-color;
+            }
+        }
+        &-footer-btn {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
+            padding: 15px 0;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            &.add-input {
+                width: 16px;
+                height: 16px;
+                border: none;
+                background: none;
+                padding: 0;
+                position: absolute;
+                right: 20px;
+                top: 12px;
+                img {
+                    width: 16px;
+                    height: 14px;
+                }
+                &::-moz-focus-inner {
+                    border: 0;
+                    padding: 0;
+                }
+            }
+            &.cancel {
+                background-color: transparent;
+            }
+            &.select {
+                background-color: transparent;
+                color: $bg-color-red;
+            }
+        }
+    }
+    &__download-content {
+        padding: 20px;
+    }
+    &__download-info {
+        width: 100%;
+        font-size: 13px;
+        text-align: center;
+        color: $light-text-color;
+        margin: 20px auto 8px;
+        display: block;
+    }
+    &__user-content {
+        padding: 20px;
+    }
+}
+
+.date--select {
+    .react-datepicker-wrapper,
+    .react-datepicker__input-container {
+        background: transparent;
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+    .date--select-input {
+        width: 100%;
+        height: 47px;
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 2px;
+        border: 0;
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+        background-size: 30px;
+        text-align: left;
+        padding-left: 46px;
+        color: #797575;
+    }
+    .react-datepicker {
+        border-radius: 2px;
+        width: 312px;
+        &__header {
+            padding-top: 0;
+            border-bottom: none;
+            background: $bg-color-white;
+        }
+        &__navigation {
+            border: none;
+            top: 26px;
+            &:after {
+                content: ' ';
+                display: block;
+                width: 8px;
+                height: 12px;
+                background-size: contain;
+                background: url('../img/icons/ic-arrow--right.svg') no-repeat center;
+            }
+            &--previous {
+                left: 30px;
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+            &--next {
+                right: 36px;
+            }
+        }
+        &__day--outside-month {
+            opacity: 0.3;
+        }
+        &__day--in-range,
+        &__day--in-selecting-range,
+        &__day--selected {
+            background: rgba(255, 157, 0, 0.15);
+            border-radius: 0;
+            &.react-datepicker__day--sat {
+                border-radius: 0 50% 50% 0;
+            }
+            &.react-datepicker__day--sun {
+                border-radius: 50% 0 0 50%;
+            }
+            &.react-datepicker__day--range-end,
+            &.react-datepicker__day--selecting-range-end,
+            &.react-datepicker__day--range-start,
+            &.react-datepicker__day--selecting-range-start {
+                background: #f0ad24;
+                color: $bg-color-white;
+                border-radius: 100%;
+                position: relative;
+                z-index: 2;
+                &:after {
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    content: ' ';
+                    background: rgba(255, 157, 0, 0.15);
+                    width: 100%;
+                    border-radius: 0 50% 50% 0;
+                    height: 100%;
+                    position: absolute;
+                }
+            }
+            &.react-datepicker__day--range-start,
+            &.react-datepicker__day--selecting-range-start {
+                &:after {
+                    border-radius: 50% 0 0 50%;
+                }
+            }
+        }
+        &__day,
+        &__day-name {
+            width: 42px;
+            line-height: 42px;
+            font-size: 14px;
+            color: $primary-text-color;
+            margin: 2px 0;
+        }
+        &__day-name {
+            line-height: 42px;
+        }
+        &__day--disabled {
+            color: $light-text-color;
+        }
+        &__day--selected,
+        &__day--keyboard-selected {
+            background: #f0ad24;
+            color: $bg-color-white;
+            border-radius: 100%;
+        }
+        &__month {
+            margin: 0 auto 26px;
+            &-container {
+                margin-bottom: 8px;
+                float: initial;
+            }
+        }
+        &__current-month {
+            font-size: 16px;
+            color: $primary-text-color;
+            padding: 24px 0 14px;
+            font-weight: 500;
+            border-bottom: 0.5px solid #ebebeb;
+            margin: 0 auto 20px;
+            width: 85%;
+        }
+        &__info {
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            margin-bottom: 12px;
+            width: 100%;
+            color: $light-text-color;
+        }
+        &__btn {
+            width: 50%;
+            height: 46px;
+            padding: 10px 0;
+            border: none;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            color: $primary-text-color;
+            border-top: 0.5px solid #ebebeb;
+            background: transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+            &:nth-child(odd) {
+                border-right: 0.5px solid #ebebeb;
+            }
+            &--selected {
+                transition: all 0.3s;
+                background: #f5831f;
+                color: $bg-color-white;
+            }
+        }
+        &__tomorrow-button {
+            clear: unset;
+            float: right;
+            border-left: 0.5px solid #ebebeb;
+        }
+        &__current-date {
+            background-color: #f0ad24;
+            color: $bg-color-white;
+        }
+    }
+}

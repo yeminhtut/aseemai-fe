@@ -1,0 +1,31 @@
+.email-export-modal {
+    &__emails-container {
+        margin-bottom: 42px;
+
+        > div:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+    &__form-control {
+        display: flex;
+        flex-direction: row;
+    }
+    &__form-icon {
+        fill: $light-text-color !important;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-20%);
+        width: 20px !important;
+
+        &.with-error {
+            transform: translateY(-60%);
+        }
+        &.last {
+            right: 20px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

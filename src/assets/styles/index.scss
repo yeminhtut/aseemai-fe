@@ -1,0 +1,223 @@
+@import './misc/colour.scss';
+@import './misc/font.scss';
+@import './misc/common.scss';
+@import './misc/mixin.scss';
+@import './misc/reactDateRange.scss';
+@import './misc/swiper.css';
+
+.hide {
+    display: none !important;
+}
+.invisible {
+    visibility: hidden !important;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.layout-container {
+    height: 100%;
+}
+
+body,
+html {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: $primary-text-color;
+    line-height: 1;
+    background: #f8f8f8;
+    &.ReactModal__Body--open {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
+}
+
+body {
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+.custom {
+    &--modal {
+        top: 20%;
+        &_header {
+            padding: 0 15%;
+            &--title {
+                padding: 16px 5px 18px;
+                text-align: center;
+                color: $primary-text-color;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.5;
+                margin: 0;
+                border-bottom: 0.5px solid $border-color;
+            }
+        }
+        &_wrap {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            svg {
+                fill: $light-text-color;
+                width: 42px;
+                height: 52px;
+                margin-bottom: 18px;
+                &.current {
+                    fill: $bg-color-green;
+                }
+                &.error {
+                    fill: $bg-color-red;
+                }
+            }
+        }
+        &_text {
+            text-align: center;
+            margin-bottom: 26px;
+            line-height: 1.4;
+        }
+        &_info {
+            font-size: 12px;
+            color: $light-text-color;
+            text-align: center;
+            margin: 0 auto 17px;
+        }
+        &_email {
+            background: $border-color;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            color: $primary-text-color;
+            text-align: center;
+            padding: 11px 55px;
+            line-height: 1.4;
+            margin-bottom: 11px;
+        }
+    }
+}
+
+.grey-text {
+    color: $light-text-color;
+}
+
+.flex-form {
+    display: flex !important;
+    flex-direction: unset !important;
+    align-items: flex-end;
+    &__wrap {
+        width: 100%;
+
+        div {
+            margin-top: 16px;
+            margin-right: 10px;
+            display: inherit;
+        }
+    }
+}
+
+.email {
+    &-error {
+        font-size: 13px;
+        color: $bg-color-bright-red;
+    }
+    &-success {
+        font-size: 13px;
+        color: $bg-color-green;
+    }
+}
+
+.password {
+    &-error {
+        font-size: 11px;
+        color: $bg-color-bright-red;
+    }
+    &-ln-error {
+        font-size: 11px;
+        color: $bg-color-bright-red;
+        margin: 0;
+        height: 0;
+        text-align: center;
+    }
+    &-match-error {
+        font-size: 11px;
+        color: $bg-color-bright-red;
+        position: absolute;
+        margin-top: 200px;
+        margin-inline-start: 20px;
+        height: 0;
+        text-align: center;
+    }
+    &-success {
+        font-size: 11px;
+        color: $bg-color-green;
+    }
+}
+
+input[type='number'] {
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+}
+
+.bg-grey {
+    background: #c7c7c7;
+}
+
+/*
+.email-error {
+    height: 0;
+    font-size: 12px;
+    color: $bg-color-bright-red;
+    margin: 2px 0px 0px 0px;
+}
+*/
+
+.view-button {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 23px;
+    img {
+        width: 16px;
+    }
+}
+
+.success-check-icon {
+    fill: $bg-color-green !important;
+}
+
+// svg loading animation
+#Layer_1 {
+    width: 70px;
+    margin: 0 auto;
+}
+
+#sh {
+    fill: none;
+    stroke: rgb(255, 157, 0);
+    stroke-width: 0.3px;
+    stroke-dasharray: 0;
+}
+
+.mask-rectOne {
+    animation: fill 2s ease-in-out 1;
+}
+
+.mask-rectOne {
+    animation: wave 0.4s linear, fill-up 2s ease-out alternate;
+}

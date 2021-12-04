@@ -1,0 +1,273 @@
+#profit-calculator-chart {
+    @media screen and (max-width: 678px) {
+        margin-top: -60px;
+        margin-bottom: -40px;
+    }
+}
+
+.profit-group-wrapper {
+    text-align: center;
+    margin-top: 25px;
+
+    @media screen and (max-width: 678px) {
+        text-align: left;
+        margin-top: 0px;
+    }
+}
+
+.profit-group {
+    display: inline-block;
+}
+
+.profit-calculator {
+    &__header {
+        position: relative;
+        .header-btn {
+            fill: $bg-color-white;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &__neighbour {
+                margin-right: 20px;
+            }
+            &.back-btn {
+                margin-right: 30px;
+            }
+        }
+        &-clear:hover {
+            cursor: pointer;
+        }
+    }
+    &__wrapper {
+        height: 100%;
+    }
+    &__content {
+        padding: 26px 0 0;
+        height: calc(100% - 57px);
+        box-sizing: border-box;
+        max-width: 1024px;
+        margin: auto;
+    }
+    &__form-fields {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        @media screen and (max-width: 678px) {
+            justify-content: space-between;
+        }
+    }
+    &__form--inputs-wrap {
+        padding: 0 16px;
+    }
+    &__block {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    &__discount-block {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+    }
+    &__total-price {
+        margin-top: 8px;
+        border: 0;
+        display: inline-flex;
+        padding: 0;
+        position: relative;
+        min-width: 0;
+        flex-direction: column;
+        vertical-align: top;
+    }
+    &__label {
+        font-size: 13px;
+        margin-bottom: 8px;
+        line-height: 1;
+        font-weight: 500;
+        transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    }
+    &__inline-label {
+        margin-right: 8px;
+        flex: 0 0 auto;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    &__prefix {
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+        p {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.46429em;
+            color: rgba(0, 0, 0, 0.54);
+            margin: 0;
+            margin-right: 8px;
+        }
+    }
+    &__submit-btn {
+        width: calc(100% - 16px);
+        background: $bg-color-red;
+        border-radius: 2px;
+        font-size: 18px;
+        padding: 16px;
+        border: none;
+        color: #fff;
+        margin: 30px auto 10px;
+        min-height: 53px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    &__input-right {
+        input {
+            text-align: right;
+        }
+    }
+    &__chart-title {
+        position: relative;
+        padding: 10px;
+        font-size: 16px;
+        line-height: 24px;
+        border: none;
+        border-radius: 2px;
+        background: #ececec;
+        margin-bottom: 10px;
+        word-break: break-word;
+        text-align: center;
+    }
+
+    &__chart-total {
+        text-align: center;
+        margin: 30px 0px 10px 0px;
+        & > div:nth-child(2) {
+            margin-top: 5px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+    &__restaurant-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        &.print {
+            display: block;
+        }
+    }
+
+    &__result {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 1.25;
+
+        &-profit,
+        &-cost {
+            width: 300px;
+            text-align: center;
+
+            & > div:nth-child(1) {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5px;
+                color: white;
+                border-radius: 4px;
+                padding: 0px 10px;
+                box-sizing: border-box;
+            }
+
+            & > div:nth-child(2) {
+                font-size: 30px;
+                font-weight: 500;
+            }
+        }
+
+        &-profit {
+            margin-right: 20px;
+            & > div:nth-child(1) {
+                background: #f28700;
+            }
+
+            & > div:nth-child(2) {
+                color: #f28700;
+            }
+        }
+
+        &-cost {
+            & > div:nth-child(1) {
+                background: #34aafc;
+            }
+
+            & > div:nth-child(2) {
+                color: #34aafc;
+            }
+        }
+    }
+}
+
+.profit-item {
+    font-size: 14px;
+    line-height: 2;
+    color: #4a4a4a;
+    display: flex;
+    align-items: center;
+    max-width: 780px;
+
+    &:before {
+        content: '●';
+        margin-right: 5px;
+        font-size: 25px;
+        line-height: 1;
+    }
+
+    &--commission:before {
+        color: #cccccc;
+    }
+
+    &--food:before {
+        color: #34aafc;
+    }
+
+    &--drink:before {
+        color: #3286bf;
+    }
+
+    &--discount:before {
+        color: #c0e5fe;
+    }
+}
+
+.chart-label {
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+
+    &--profit {
+        background: #f28700;
+        color: white;
+    }
+    &--commission {
+        background: #cccccc;
+        color: #777;
+    }
+    &--drink {
+        background: #3286bf;
+        color: white;
+    }
+    &--food {
+        background: #34aafc;
+        color: white;
+    }
+    &--discount {
+        background: #c0e5fe;
+        color: #333;
+    }
+}

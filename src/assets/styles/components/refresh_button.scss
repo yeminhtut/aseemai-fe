@@ -1,0 +1,30 @@
+.refresh__button {
+    &--content {
+        position: fixed;
+        width: 100px;
+        height: 38px;
+        background: $bg-color-red;
+        color: $bg-color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+        font-size: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+            margin-right: 4px;
+        }
+        &-show {
+            visibility: visible;
+            opacity: 1;
+        }
+        &-hidden {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 300ms, opacity 300ms linear;
+        }
+    }
+}

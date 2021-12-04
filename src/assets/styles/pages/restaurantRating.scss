@@ -1,0 +1,60 @@
+.customer-review {
+    &__rating {
+        &--title {
+            border-bottom: 1px solid rgba($border-color, 0.5);
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+            padding: 15px 16px 14px;
+        }
+        &--wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 17px 0 34px;
+        }
+        &--count {
+            align-items: center;
+            border-right: 1px solid rgba($border-color, 0.5);
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 150px;
+
+            &-wrap {
+                color: $light-text-color;
+                font-size: 12px;
+                margin-bottom: 10px;
+
+                span {
+                    color: $primary-text-color;
+                    font-size: 75px;
+                    font-weight: 300;
+                }
+            }
+        }
+        &--list {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &-item {
+                align-items: center;
+                display: flex;
+                justify-content: flex-end;
+                min-width: 130px;
+            }
+            &-count {
+                font-size: 12px;
+                font-weight: 300;
+                margin-right: 13px;
+
+                &.grey-text {
+                    color: $light-text-color;
+                }
+            }
+        }
+    }
+}

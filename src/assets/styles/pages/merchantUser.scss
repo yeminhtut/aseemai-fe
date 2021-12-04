@@ -1,0 +1,124 @@
+.merchant-users {
+    &__header {
+        position: relative;
+        .header-btn {
+            fill: $bg-color-white;
+
+            &.back-btn {
+                margin-right: 30px;
+            }
+        }
+    }
+    &__container {
+        max-width: 1024px;
+        padding: 16px 8px;
+        @media screen and (max-width: 768px) {
+            padding: 12px;
+        }
+        @media screen and (max-width: 568px) {
+            padding: 8px;
+        }
+    }
+    &__btn-wrap {
+        align-items: center;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        a {
+            margin-left: 18px;
+        }
+    }
+    &__sort {
+        svg {
+            fill: #f5831f;
+        }
+    }
+}
+
+.merchant-user {
+    &__container {
+        max-width: 1024px;
+        @media screen and (min-width: 568px) {
+            background: #fff;
+            border-radius: 2px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            width: calc(100% - 8px);
+        }
+    }
+    &__container-profile {
+        max-width: 1024px;
+        padding-bottom: 54px;
+        margin: auto;
+        border-radius: 2px;
+        margin-top: 16px;
+        @media screen and (max-width: 768px) {
+            margin: 16px 8px;
+        }
+    }
+    &__role {
+        order: 2;
+        @media screen and (max-width: 568px) {
+            order: 1;
+            width: 100%;
+        }
+        &-label {
+            width: 72px;
+            border-radius: 2px;
+            @media screen and (min-width: 568px) {
+                width: 120px;
+                padding: 8px 0px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    &__name {
+        order: 1;
+        flex-grow: 2;
+        &-label {
+            min-width: 200px;
+            max-width: 260px;
+            @media screen and (min-width: 568px) {
+                min-width: 404px;
+                max-width: 404px;
+            }
+        }
+    }
+    &__edit {
+        order: 3;
+    }
+    &__action {
+        max-width: 1024px;
+        @media screen and (max-width: 568px) {
+            position: fixed;
+        }
+        &-btn {
+            width: 100%;
+            @media screen and (max-width: 768px) {
+                width: calc(100% - 8px);
+            }
+        }
+    }
+    &__phone--number,
+    &__phone--code {
+        label {
+            color: #bbb;
+            font-size: 12px;
+        }
+    }
+    &__gender-wrapper {
+        @media screen and (max-width: 568px) {
+            flex-direction: column;
+        }
+    }
+    &__resend {
+        margin-left: auto;
+        @media screen and (min-width: 568px) {
+            margin-right: 32px;
+        }
+    }
+}
+
+.bg-eatigo--bright-red {
+    background: $bg-color-bright-red;
+}

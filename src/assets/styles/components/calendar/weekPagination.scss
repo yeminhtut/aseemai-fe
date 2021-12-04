@@ -1,0 +1,89 @@
+.week-pagination {
+    color: $dark-border-color;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 500;
+
+    &__btn {
+        border: 0.5px solid $dark-border-color;
+        border-radius: 2px;
+        box-sizing: border-box;
+        padding: 6.5px;
+        text-align: center;
+
+        &--extra-padded {
+            color: $primary-text-color;
+            flex: 1;
+            padding: 6.5px 20px;
+        }
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+        &:hover {
+            background-color: $border-color;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+        > span {
+            vertical-align: middle;
+        }
+        &--loading {
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+    &__day-selection {
+        display: flex;
+        flex-direction: row;
+        margin: 20px -15px 5px -15px;
+
+        > div {
+            flex: 0 14.28%;
+        }
+        &-item-container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &-item {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            height: 60px;
+            justify-content: center;
+
+            &--selected {
+                background-color: $bg-color-yellow;
+                border: 1px solid $bg-color-yellow;
+                border-radius: 50%;
+                color: $bg-color-white;
+                height: 52px;
+                width: 52px;
+                transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+            }
+        }
+        &-text {
+            font-size: 12px;
+        }
+        &-date {
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .week-pagination {
+        justify-content: space-between;
+
+        &__btn {
+            &--extra-padded {
+                flex: 0 0 240px;
+            }
+        }
+    }
+}

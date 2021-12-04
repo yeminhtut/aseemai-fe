@@ -1,0 +1,21 @@
+.show-more {
+    align-items: center;
+    color: $bg-color-red;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    margin-top: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &__icon {
+        transform: rotate(0deg);
+        transition: all 0.25s ease-in;
+
+        &--expanded {
+            transform: rotate(180deg);
+            transition: all 0.25s ease-out;
+        }
+    }
+}

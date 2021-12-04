@@ -1,0 +1,76 @@
+.contact-us {
+    &--container {
+        height: 100%;
+        box-sizing: border-box;
+    }
+    &__header {
+        position: relative;
+        .back-btn {
+            fill: $bg-color-white;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+    }
+    &__block {
+        background: $bg-color-white;
+        padding: 20px;
+    }
+    &__content {
+        padding: 26px 0 0;
+        height: calc(100% - 57px);
+        box-sizing: border-box;
+        max-width: 1024px;
+        margin: auto;
+    }
+    &__form-fields {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__form--inputs-wrap {
+        padding: 0 16px;
+    }
+    &__email {
+        width: 100%;
+        margin-bottom: 16px !important;
+    }
+    &__phone {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 16px;
+
+        &--code {
+            margin-right: 16px !important;
+            width: 180px;
+        }
+        &--number {
+            width: 100%;
+        }
+    }
+    &__message {
+        width: 100%;
+        margin-bottom: 56px;
+    }
+    &__description {
+        &--error {
+            color: $bg-color-red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
+    &--submit-btn {
+        width: calc(100% - 16px);
+        background: $bg-color-red;
+        border-radius: 2px;
+        font-size: 18px;
+        padding: 16px;
+        border: none;
+        color: $bg-color-white;
+        margin: 30px auto 8px;
+        min-height: 53px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}

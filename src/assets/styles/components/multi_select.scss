@@ -1,0 +1,118 @@
+.multi-select {
+    &__input {
+        position: relative;
+        padding: 15px 33px 15px 20px;
+        font-size: 16px;
+        line-height: 24px;
+        border: none;
+        border-radius: 2px;
+        background: $bg-color-white;
+        box-shadow: 0 2px 4px 0 rgba($shadow-bg-color, 0.07);
+        margin-bottom: 10px;
+        word-break: break-word;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            background: url('../../assets/img/icons/ic-arrow--down.svg') no-repeat center/contain;
+        }
+        &.loading {
+            &:after {
+                background: none;
+            }
+        }
+        &-loading-icon {
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            right: 20px;
+            top: 0;
+        }
+    }
+
+    &__placeholder {
+        color: #d3d3d3;
+    }
+
+    &__modal {
+        &-item {
+            p {
+                font-size: 16px;
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+            }
+        }
+        &-content {
+            padding-top: 20px;
+        }
+        &-list {
+            box-sizing: border-box;
+            overflow-y: auto;
+            max-height: 60vh;
+            padding-bottom: 10px !important;
+        }
+        &-header {
+            padding-bottom: 15px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
+            text-align: center;
+            padding-left: 9px;
+            border-bottom: 2px solid $border-color;
+            position: relative;
+        }
+        &-checkbox {
+            left: 15px;
+            position: absolute;
+            top: -15px;
+        }
+        &-text {
+            margin: 0 41px;
+        }
+        &-wrapper {
+            background: #f8f8f8;
+        }
+        &-actions {
+            border-top: 1px solid $border-color;
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+            font-weight: 500;
+
+            > button {
+                flex: 0 50%;
+            }
+            &-button {
+                background-color: transparent;
+                border: 0;
+                box-sizing: border-box;
+                font-size: 14px;
+                font-weight: 500;
+                outline: none;
+                padding: 15px 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+                &:first-child {
+                    border-right: 1px solid $border-color;
+                }
+                &.primary {
+                    color: $bg-color-red;
+                }
+                &.disabled {
+                    color: $light-text-color;
+
+                    &:hover {
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+}

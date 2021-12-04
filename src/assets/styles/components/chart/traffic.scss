@@ -1,0 +1,15 @@
+.traffic-chart {
+    .label {
+        color: #888;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: right;
+        transform: translateX(-100%);
+        white-space: pre;
+    }
+    .label-group {
+        color: $primary-text-color;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
